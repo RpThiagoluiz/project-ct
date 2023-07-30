@@ -1,6 +1,10 @@
+'use client';
+
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
-import { AuthProvider } from './providers/authProvider';
+import { usePathname } from 'next/navigation';
+import { checkIsPublicRoute } from '@/utils/checkIsPublicRoute';
+import { PrivateRouteProvider } from './providers/privateRouteProvider';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -17,10 +21,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
+  const isPublicRoute = checkIsPublicRoute(pathname!);
+
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <AuthProvider>{children}</AuthProvider>
+        <>
+          {isPublicRoute && children}
+          {!isPublicRoute && (
+            <PrivateRouteProvider>{children}</PrivateRouteProvider>
+          )}
+        </>
       </body>
     </html>
   );
