@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
-import { tv as tailwindVariants, VariantProps } from 'tailwind-variants';
+import { tv, VariantProps } from 'tailwind-variants';
 
-const buttonStyle = tailwindVariants({
+const buttonStyle = tv({
   base: 'flex items-center justify-center rounded text-sm font-medium text-grayLighter transition ease-in-out delay-15 duration-300 ',
   variants: {
     pattern: {
@@ -26,6 +26,7 @@ const buttonStyle = tailwindVariants({
     pattern: 'primary',
     size: 'default',
     success: false,
+    disabled: false,
   },
 });
 
