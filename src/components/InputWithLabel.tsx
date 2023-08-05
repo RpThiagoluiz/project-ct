@@ -69,7 +69,7 @@ const InputWithLabel = (
     />
 
     {icon ? (
-      <div className="absolute top-2/4 right-3 grid h-5 w-5 -translate-y-2/4 place-items-center text-grayLighter">
+      <div className="absolute top-2/4 right-3 grid h-5 w-5 -translate-y-2/4 place-items-center text-primaryGray">
         {icon}
       </div>
     ) : null}
@@ -85,7 +85,9 @@ const InputWithLabel = (
     </label>
 
     {error && errorMessage && (
-      <span className="mt-1 text-xs text-red-400">{errorMessage}</span>
+      <span className="mt-1 first-letter:text-xs text-red-400">
+        {errorMessage}
+      </span>
     )}
   </div>
 );
