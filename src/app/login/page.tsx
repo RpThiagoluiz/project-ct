@@ -1,20 +1,40 @@
+'use client';
+
 import { Button } from '@/components/Button';
+import { AiOutlineMenu } from 'react-icons/ai';
+import InputWithLabel from '@/components/InputWithLabel';
 
 export default function Page() {
   return (
-    <div className="flex flex-col h-screen items-center justify-center gap-6 bg-whitePrimary text-primaryDarkBlue">
-      <h1>LOGIN</h1>
+    <div className="h-screen flex flex-col items-center justify-center bg-whitePrimary ">
+      <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+        Seu acesso
+      </h4>
 
-      <Button>default</Button>
-      <Button size="fullWidth">fullWidth</Button>
-      <Button size="sm">small</Button>
-      <Button size="xs">extra small</Button>
-      <Button success>success</Button>
-      <Button success className="w-50">
-        success + class
-      </Button>
-      <Button pattern="outlined">outlined</Button>
-      <Button disabled>disabled</Button>
+      {/* FORM essa DIV */}
+      <form className="flex flex-col mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 p-4 gap-5 border lg:border-grayLighter lg:border lg:rounded-lg lg:shadow-md">
+        <InputWithLabel label="CPF" />
+        <InputWithLabel label="SENHA" />
+        <Button
+          size="fullWidth"
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            console.log('TODO');
+          }}
+        >
+          Entrar
+        </Button>
+        <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-grayPrimary antialiased">
+          Recuperar{' '}
+          <a
+            className="font-medium text-grayDark transition-colors hover:text-primaryDarkBlue underline"
+            href="#"
+          >
+            Senha
+          </a>
+        </p>
+      </form>
     </div>
   );
 }
