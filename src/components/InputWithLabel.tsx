@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, LegacyRef, forwardRef } from 'react';
 import { tv, VariantProps } from 'tailwind-variants';
 
 const inputStyles = tv({
-  base: 'peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-blue-950 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-500',
+  base: 'relative peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-blue-950 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-500',
 
   variants: {
     error: {
@@ -39,10 +39,20 @@ type Props = ComponentPropsWithoutRef<'input'> &
   VariantProps<typeof inputStyles> & {
     label: string;
     errorMessage?: string;
+    icon?: React.ReactNode;
   };
 
 const InputWithLabel = (
-  { label, pattern, disabled, error, errorMessage, className, ...props }: Props,
+  {
+    label,
+    pattern,
+    disabled,
+    error,
+    errorMessage,
+    icon,
+    className,
+    ...props
+  }: Props,
   ref: LegacyRef<HTMLInputElement> | undefined
 ) => (
   <div className="relative h-10 w-full min-w-[200px]">
@@ -57,6 +67,13 @@ const InputWithLabel = (
       disabled={disabled}
       {...props}
     />
+
+    {icon ? (
+      <div className="absolute top-2/4 right-3 grid h-5 w-5 -translate-y-2/4 place-items-center text-grayLighter">
+        {icon}
+      </div>
+    ) : null}
+
     <label
       className={labelStyles({
         error,
