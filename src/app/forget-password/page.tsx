@@ -1,5 +1,5 @@
 import Input from '@/components/Input';
-import { InputWithLabel } from '@/components/InputWithLabel';
+import InputWithLabel from '@/components/InputWithLabel';
 
 export default function Page() {
   return (
@@ -17,7 +17,7 @@ export default function Page() {
         pattern="outlined"
         error
         errorMessage="Error in this field"
-        className="mt-4"
+        className="mt-5"
         placeholder="CPF outlined Error"
       />
 
@@ -32,25 +32,12 @@ export default function Page() {
       <Input disabled className="mt-15" placeholder="CPF TEST disabled" />
 
       <InputWithLabel label="Saudades Cláudio Default" />
-      <InputWithLabel
-        label="Saudades Cláudio ERROR"
-        error
-        errorMessage="Muita SAUDADE"
-        className="mt-15"
-      />
 
       <InputWithLabel
         label="Saudades Cláudio outlined"
-        pattern="outlined"
         error
         errorMessage="Error in this field"
         className="mt-15"
-      />
-
-      <InputWithLabel
-        label="Saudades Cláudio outlined"
-        pattern="outlined"
-        placeholder="CPF TEST outlined"
       />
 
       <InputWithLabel label="Saudades Cláudio disabled" disabled />
