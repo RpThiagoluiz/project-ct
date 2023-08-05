@@ -109,12 +109,12 @@ export default function Page() {
           </Button>
         </form>
         <p className="mt-10 block text-right text-base font-normal leading-relaxed text-grayPrimary antialiased">
-          Recuperar{' '}
+          Esqueci minha{' '}
           <Link
             className="font-medium text-grayDark transition-colors hover:text-primaryDarkBlue underline"
             href="/forget-password"
           >
-            Senha
+            senha
           </Link>
         </p>
       </div>
