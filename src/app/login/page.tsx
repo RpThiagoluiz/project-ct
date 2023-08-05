@@ -1,15 +1,18 @@
 'use client';
 
 import { Button } from '@/components/Button';
-import { AiOutlineMenu } from 'react-icons/ai';
 import InputWithLabel from '@/components/InputWithLabel';
+import Image from 'next/image';
 
 export default function Page() {
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-whitePrimary ">
-      <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-        Seu acesso
-      </h4>
+      <Image
+        src="/images/package.svg"
+        width={250}
+        height={250}
+        alt="{highlight}"
+      />
 
       {/* FORM essa DIV */}
       <form className="flex flex-col mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 p-4 gap-5 border lg:border-grayLighter lg:border lg:rounded-lg lg:shadow-md">
