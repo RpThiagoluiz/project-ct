@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 import { tv, VariantProps } from 'tailwind-variants';
 
 const buttonStyle = tv({
-  base: 'flex items-center justify-center rounded text-sm font-medium text-grayLighter transition ease-in-out delay-15 duration-300 ',
+  base: 'flex items-center justify-center rounded text-sm font-medium text-grayLighter transition ease-in-out delay-15 duration-300',
   variants: {
     pattern: {
       primary: 'bg-primaryDarkBlue text-white  hover:opacity-80',
