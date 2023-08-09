@@ -84,7 +84,7 @@ export default function Page() {
             })}
             error={!!errors?.password}
             errorMessage={errors?.password?.message}
-            label="SENHA"
+            label="Senha"
             icon={
               showPassword ? (
                 <AiOutlineEyeInvisible
