@@ -7,4 +7,4 @@ import { PUBLIC_ROUTES } from '../constants/publicRoutes';
  */
 
 export const checkIsPublicRoute = (asPath: string): boolean =>
-  PUBLIC_ROUTES.includes(asPath);
+  PUBLIC_ROUTES.some((path) => asPath.startsWith(path));
