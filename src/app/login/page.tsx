@@ -48,15 +48,19 @@ export default function Page() {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-whitePrimary ">
-      <Image
-        src="/images/package.svg"
-        width={280}
-        height={250}
-        alt="{highlight}"
-      />
+      <div className="flex w-full justify-center gap-3">
+        <Image
+          src="/images/package.svg"
+          width={120}
+          height={80}
+          alt="{highlight}"
+        />
+
+        <span className="self-end font-semibold">PROJECT CT</span>
+      </div>
 
       <div className="flex flex-col mt-8 mb-2 p-4 border lg:border-grayLighter lg:border lg:rounded-lg lg:shadow-md">
-        <form className=" flex flex-col  gap-10 max-w-screen-lg sm:w-96">
+        <form className=" flex flex-col gap-10 max-w-screen-lg sm:w-96">
           <InputWithLabel
             {...register('user', {
               required: {
